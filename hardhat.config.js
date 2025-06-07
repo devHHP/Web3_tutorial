@@ -6,6 +6,7 @@ const { config } = require("@chainlink/env-enc");  // 替换dotenv
 config(); // 自动加载.env.enc
 
 require("./tasks")
+require("hardhat-deploy")
 
 require("@nomicfoundation/hardhat-toolbox");
 
@@ -32,5 +33,14 @@ module.exports = {
   },
   etherscan: {
     apiKey: ETHERSCAN_API_KEY  // 新的 v2 版本  单一全局密钥，无需按网络拆分 故不需要写 通用sepolia
-  }
+  },
+
+  namedAccounts: {
+    firstAccount: {
+      default: 0 // here this will by default take the first account as deployer
+    },
+    secondAccount: {
+      default: 1
+    },
+  },
 };
