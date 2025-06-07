@@ -14,7 +14,7 @@ contract FundMe {
 
     uint256 constant MINIMUM_VALUE = 0.01 ether; //USD
     
-    AggregatorV3Interface internal dataFeed;
+    AggregatorV3Interface public dataFeed;
 
     uint256 constant TARGET = 1000 * 10 ** 18;
 
